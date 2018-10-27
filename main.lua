@@ -18,14 +18,22 @@ function love.load()
 end
 
 function love.update(dt)
-  local goUp = boolToNum(love.keyboard.isDown("up"))
-  local goDown = boolToNum(love.keyboard.isDown("down"))
-  local goLeft = boolToNum(love.keyboard.isDown("left"))
-  local goRight = boolToNum(love.keyboard.isDown("right"))
+  -- holding arrow keys determines player's velocity
+  playerVelocity.x, playerVelocity.y = 0, 0
+  if love.keyboard.isDown("right") then 
+    playerVelocity.x = playerVelocity.x + PLAYER_SPEED * dt
+  end
+  if love.keyboard.isDown("left") then
+    playerVelocity.x = playerVelocity.x - PLAYER_SPEED * dt
+  end
+  if love.keyboard.isDown("up") then 
+    playerVelocity.y = playerVelocity.y - PLAYER_SPEED * dt
+  end
+  if love.keyboard.isDown("down") then
+    playerVelocity.y = playerVelocity.y + PLAYER_SPEED * dt
+  end
 
-  playerVelocity.x = (goRight * PLAYER_SPEED * dt) - (goLeft * PLAYER_SPEED * dt)
-  playerVelocity.y = -1 * (goUp * PLAYER_SPEED * dt) + (goDown * PLAYER_SPEED * dt)
-
+  -- move the player
   playerPos.x = playerPos.x + playerVelocity.x
   playerPos.y = playerPos.y + playerVelocity.y
 end
@@ -33,8 +41,4 @@ end
 function love.draw()
   love.graphics.setColor(0.4, 0.4, 1.0, 1.0)
   love.graphics.circle("fill", playerPos.x, playerPos.y, 20, 32)
-end
-
-function boolToNum(val)
-  return val == true and 1 or val == false and 0
 end
