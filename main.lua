@@ -14,7 +14,7 @@ local playerPos = {
 }
 
 function love.load()
-  -- Here, you might load resources like images or sounds
+  -- here, you might load resources like images or sounds
 end
 
 function love.update(dt)
