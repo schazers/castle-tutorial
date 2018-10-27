@@ -1,7 +1,7 @@
-GAME_WIDTH = 600
-GAME_HEIGHT = 600
+local GAME_WIDTH = 600
+local GAME_HEIGHT = 600
 
-PLAYER_SPEED = 256
+local PLAYER_SPEED = 256
 
 local playerVelocity = {
   x = 0,
@@ -14,13 +14,14 @@ local playerPos = {
 }
 
 function love.load()
+  -- Here, you might load resources like images or sounds
 end
 
 function love.update(dt)
-  goUp = boolToNum(love.keyboard.isDown("up"))
-  goDown = boolToNum(love.keyboard.isDown("down"))
-  goLeft = boolToNum(love.keyboard.isDown("left"))
-  goRight = boolToNum(love.keyboard.isDown("right"))
+  local goUp = boolToNum(love.keyboard.isDown("up"))
+  local goDown = boolToNum(love.keyboard.isDown("down"))
+  local goLeft = boolToNum(love.keyboard.isDown("left"))
+  local goRight = boolToNum(love.keyboard.isDown("right"))
 
   playerVelocity.x = (goRight * PLAYER_SPEED * dt) - (goLeft * PLAYER_SPEED * dt)
   playerVelocity.y = -1 * (goUp * PLAYER_SPEED * dt) + (goDown * PLAYER_SPEED * dt)
