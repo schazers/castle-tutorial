@@ -1,6 +1,7 @@
 ---
 main: main.lua
 name: Castle Tutorial
+username: schazers
 coverImageUrl: https://raw.githubusercontent.com/schazers/castle-tutorial/master/logo.png
 description: A simple introduction to Castle.
 
