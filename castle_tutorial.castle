@@ -1,7 +1,8 @@
 ---
-main: main.lua
+title: main.lua
 name: Castle Tutorial
-username: schazers
+owner: schazers
 coverImage: logo.png
+primaryColor: FEFE00
 description: A simple introduction to Castle.
 
