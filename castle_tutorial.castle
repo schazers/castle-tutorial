@@ -1,6 +1,6 @@
 ---
-title: main.lua
-name: Castle Tutorial
+main: main.lua
+title: Castle Tutorial
 owner: schazers
 coverImage: logo.png
 primaryColor: FEFE00
